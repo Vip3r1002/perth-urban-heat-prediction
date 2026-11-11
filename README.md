@@ -55,7 +55,7 @@ Based on the model and the analysis, councils looking to reduce urban heat shoul
 
 ## Limitations
 - Feature importance shows association, not cause. A field trial would be needed to confirm the effect of, for example, planting trees.
-- The data is a single snapshot without location coordinates, so seasonal change and spatial patterns between neighbouring cells could not be modelled.
+- The features include no location coordinates, so spatial patterns between neighbouring cells could not be modelled.
 - One-hot encoding ignored the natural order of ordinal features such as wind exposure. Ordinal encoding might help distance-based models.
 - The severe class is the smallest (about 18% of cells), so it is the hardest class to predict.
 
