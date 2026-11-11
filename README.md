@@ -23,18 +23,29 @@ Urban heat islands make some suburbs much hotter than others, which affects heal
 4. **Evaluation**: macro-F1, accuracy, precision, recall, confusion matrix and feature importance
 
 ## Results
-| Model | Macro-F1 (5-fold CV) |
-|---|---|
-| **Random Forest** | **0.835** |
-| k-Nearest Neighbours | 0.750 |
-| Naive Bayes | 0.682 |
-| Decision Tree | 0.681 |
+Random Forest was the best model, with a **macro-F1 of 0.837** in 5-fold stratified cross-validation.
 
-![Feature importance](images/feature_importance.png)
+![Model comparison](images/model_comparison.png)
+
+### What drives heat severity?
+Hard surfaces and a lack of greenery matter most. Impervious surface %, tree canopy %, green infrastructure score and building density were the top 4 features.
+
+![Top 15 feature importances](images/top15_feature_importance.png)
+
+Severe areas have a median tree canopy of about 15%, against about 41% in low-severity areas. They also have far more impervious surface (median about 75% against 35%).
+
+![Key drivers vs severity](images/drivers_vs_severity.png)
+
+### Severity across Perth councils
+The mix of severity classes is fairly similar across the 7 councils. Vincent has the largest share of severe cells and Joondalup the smallest. Local land cover therefore matters more than which council an area is in.
+
+![Severity by council area](images/severity_by_council.png)
+
+<details>
+<summary>Confusion matrix (Random Forest)</summary>
 
 ![Confusion matrix](images/confusion_matrix.png)
-
-**Key insight:** The strongest drivers of heat severity were impervious surface %, tree canopy %, green infrastructure score and building density. This suggests that more greenery and fewer hard surfaces are the main levers for cooling hot suburbs.
+</details>
 
 ## Tech stack
 Python · SQL (SQLite) · pandas · NumPy · scikit-learn · matplotlib · seaborn · Jupyter
