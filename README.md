@@ -47,6 +47,18 @@ The mix of severity classes is fairly similar across the 7 councils. Vincent has
 ![Confusion matrix](images/confusion_matrix.png)
 </details>
 
+## Recommendations
+Based on the model and the analysis, councils looking to reduce urban heat should:
+1. **Prioritise tree planting** in grid cells with low canopy cover, since tree canopy % is one of the two strongest predictors.
+2. **Reduce or cool hard surfaces** with permeable paving, cool roofs and lighter materials (higher albedo) in high-density areas.
+3. **Use the model as a screening tool** to flag likely severe cells for on-the-ground checks, instead of surveying every area.
+
+## Limitations
+- Feature importance shows association, not cause. A field trial would be needed to confirm the effect of, for example, planting trees.
+- The data is a single snapshot without location coordinates, so seasonal change and spatial patterns between neighbouring cells could not be modelled.
+- One-hot encoding ignored the natural order of ordinal features such as wind exposure. Ordinal encoding might help distance-based models.
+- The severe class is the smallest (about 18% of cells), so it is the hardest class to predict.
+
 ## Tech stack
 Python · SQL (SQLite) · pandas · NumPy · scikit-learn · matplotlib · seaborn · Jupyter
 
